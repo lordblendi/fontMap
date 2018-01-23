@@ -4,39 +4,25 @@ $(document).ready(function() {
       alert('Could not load font: ' + err);
     } else {
       const glyphs = font.glyphs.glyphs;
+      const fontMapCharacters = $('.fontMap_characters')
 
 
-      var tr = document.createElement('tr');
-      var trArray = [];
       $.each(glyphs,function(index, glyph){
-        if(index > 0 && index % 10 === 0) {
-          // trArray.push(tr);
-          $('table').append(tr);
-          tr = document.createElement('tr');
-        }
         let glyphData = getGlyphData(index, glyph);
-        let td = document.createElement('td');
-        $(td).html(glyphData['charCode']);
-        tr.append(td);
-
+        let element = document.createElement('li');
+        $(element).html(glyphData).addClass('fontMap_character');
+        fontMapCharacters.append(element);
       });
     }
   });
 });
 
 function getGlyphData(index, glyph) {
-  const path = glyph.getPath(0, 0, 70);
-
-  if (path.draw) {
-    var canvas = document.createElement("canvas");
-
-    var unicode = glyph.unicode;
-    var charCode = String.fromCharCode(unicode);
-  }
-
-  return {
-    charCode: charCode,
-    unicode: unicode,
-    index: index
-  };
+  let unicode = glyph.unicode;
+  let charCode = String.fromCharCode(unicode);
+  let cellHTML = `<div class="fontMap_character--cellBlock">
+  <span class="fontMap_character--charCode">${charCode}</span>
+  <span class="fontMap_character--unicode">${unicode}</span>
+  </div>`;
+  return cellHTML;
 }
