@@ -16,11 +16,28 @@
 .fontMap_character--cellBlock {
   min-width: 50px;
   padding: 5px;
+  transition: transform .2s ease;
+  border: solid 1px transparent;
+}
+.fontMap_character--cellBlock:hover {
+  transform: scale(1.7);
+  transform-origin: center;
+  background-color: white;
+  border-color: #e7e7e7;
+  z-index: 100px;
 }
 .fontMap_character--unicode {
-  display: none;
+  color: transparent;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+}
+
+.fontMap_character--cellBlock:hover .fontMap_character--unicode {
+  color: #bbb;
+
 }
 .fontMap_character--charCode {
   display: block;
-  font-size: 40px;
+  font-size: 48px;
 }
