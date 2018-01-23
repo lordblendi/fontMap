@@ -15,28 +15,30 @@
 
 .fontMap_character--cellBlock {
   min-width: 50px;
-  padding: 5px;
-  transition: transform .2s ease;
-  border: solid 1px transparent;
+  margin: 20px 10px;
+  transition: transform .2s ease-in-out, background-color .4s ;
+  background-color: white;
+  color: black;
+  text-align: center;
+  vertical-align: middle;
 }
 .fontMap_character--cellBlock:hover {
   transform: scale(1.7);
   transform-origin: center;
-  background-color: white;
-  border-color: #e7e7e7;
-  z-index: 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 .fontMap_character--unicode {
-  color: transparent;
-  font-size: 14px;
+  color: #cecece;
+  font-size: 11px;
   font-style: italic;
-  text-align: center;
+  transition: all .2s ease;
+  opacity: 0;
 }
-
 .fontMap_character--cellBlock:hover .fontMap_character--unicode {
-  color: #bbb;
-
+  opacity: 1;
 }
+
 .fontMap_character--charCode {
   display: block;
   font-size: 48px;
