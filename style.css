@@ -18,7 +18,7 @@
 
 .fontMap_character--cellBlock {
   min-width: 50px;
-  margin: 20px 10px;
+  margin: 20px;
   transition: transform .2s ease-in-out, box-shadow .2s ease-in-out ;
   color: black;
   text-align: center;
