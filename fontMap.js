@@ -32,18 +32,6 @@ function getGlyphData(index, glyph) {
 
     var unicode = glyph.unicode;
     var charCode = String.fromCharCode(unicode);
-
-    // if exist, converting to hexadecimal value
-    // add enough 0 characters to the front
-    //  https://github.com/bluejamesbond/CharacterMap/blob/master/public/js/index.js#L417
-    if (unicode !== undefined) {
-      unicode = unicode.toString(16);
-      if (unicode.length > 4) {
-        unicode = ("000000" + unicode.toUpperCase()).substr(-6);
-      } else {
-        unicode = ("0000" + unicode.toUpperCase()).substr(-4);
-      }
-    }
   }
 
   return {
