@@ -32,9 +32,9 @@
 }
 
 .fontMap_character--unicode {
-  color: #060606;
-  font-size: 8px;
-  font-style: normal;
+  color: #cecece;
+  font-size: 3px;
+  font-style: italic;
   opacity: 0;
 }
 .fontMap_character--cellBlock:hover .fontMap_character--unicode  {
