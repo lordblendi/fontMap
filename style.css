@@ -23,12 +23,11 @@
   color: black;
   text-align: center;
   vertical-align: middle;
-  box-shadow: 0 0 0 10000px transparent;
 }
 .fontMap_character--cellBlock:hover {
-  transform: scale(1.4);
-  background-color: white;
-  box-shadow: 0 0 0 10000px rgba(0,0,0, 0.15);
+  transform: scale(1.6);
+  background-color: #F4F4F4;
+  box-shadow: 0 0 100px 0px rgba(0,0,0, .5);
   z-index: 100;
 }
 
