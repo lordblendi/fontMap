@@ -53,6 +53,23 @@ function handleSelector(selector, selectorValue) {
     // remove old theme, add new theme
     $('.fontMap_characters').removeClass(currentTheme).addClass(newTheme);
 
+    // generate random colors if it has to be Gradient
+    // otherwise go back to black
+
+    // default color should be black in Positive and Negative
+    var newColor = "#000";
+    var colorFul = newTheme.includes('Colorful');
+
+    $('.fontMap_characters .fontMap_character--cellBlock').each(function(index, cellBlock){
+        // if it should be colorful, apply random color
+        if (colorFul) {
+          newColor = '#'+'0123456789abcdef'.split('').map(function(v,i,a){
+              return i>5 ? null : a[Math.floor(Math.random()*16)]
+            }).join('');
+        }
+        $(cellBlock).css('color', newColor);
+    });
+
   } else if (multiSelect === true) {
     // if required
     // only allow toggle, if the this is not the last checked one
