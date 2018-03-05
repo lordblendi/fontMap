@@ -1,5 +1,8 @@
+---
+---
+
 $(document).ready(function() {
-  opentype.load('../assets/fonts/tenforce.ttf', function(err, font) {
+  opentype.load('{{ site.baseurl }}/assets/fonts/tenforce.ttf', function(err, font) {
     if (err) {
       alert('Could not load font: ' + err);
     } else {
