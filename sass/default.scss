@@ -17,34 +17,36 @@
 
 .fontMap_character {
   display: inline-block;
-}
 
-.fontMap_character--cellBlock {
-  min-width: 50px;
-  margin: 20px;
-  transition: transform .2s ease-in-out, box-shadow .2s ease-in-out ;
-  color: black;
-  text-align: center;
-  vertical-align: middle;
-}
-.fontMap_character--cellBlock:hover {
-  transform: scale(1.6);
-  background-color: #F4F4F4;
-  box-shadow: 0 0 100px 0px rgba(0,0,0, .5);
-  z-index: 100;
-}
+  &--cellBlock {
+    min-width: 50px;
+    margin: 20px;
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out ;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
 
-.fontMap_character--unicode {
-  color: #cecece;
-  font-size: 8px;
-  font-style: italic;
-  opacity: 0;
-}
-.fontMap_character--cellBlock:hover .fontMap_character--unicode  {
-  opacity: 1;
-}
+    &:hover {
+      transform: scale(1.6);
+      background-color: #F4F4F4;
+      box-shadow: 0 0 100px 0px rgba(0,0,0, .5);
+      z-index: 100;
 
-.fontMap_character--charCode {
-  display: block;
-  font-size: 48px;
+      .fontMap_character--unicode  {
+        opacity: 1;
+      }
+    }
+  }
+
+  &--charCode {
+    display: block;
+    font-size: 48px;
+  }
+
+  &--unicode {
+    color: #cecece;
+    font-size: 8px;
+    font-style: italic;
+    opacity: 0;
+  }
 }
