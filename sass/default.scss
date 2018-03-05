@@ -10,13 +10,13 @@
 
 .fontMap_characters {
   padding: 10%;
-}
-.fontMap_characters, .fontMap_character {
   font-family: 'tenforce';
+  background: white;
 }
 
 .fontMap_character {
   display: inline-block;
+  font-family: 'tenforce';
 
   &--cellBlock {
     min-width: 50px;

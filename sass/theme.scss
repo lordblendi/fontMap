@@ -1,0 +1,11 @@
+---
+---
+
+.theme_ {
+  &Negative {
+    filter: invert(100%);
+    .fontMap_character--unicode {
+      color: #313131;
+    }
+  }
+}
