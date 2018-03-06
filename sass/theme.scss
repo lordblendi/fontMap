@@ -13,5 +13,12 @@
     .fontMap_character--cellBlock {
       color: linear-gradient(#e66465, #9198e5);
     }
+
+    .fontMap_character--charCode {
+      background: -webkit-linear-gradient(135deg, rgba(255,50,50,1) 0%,rgba(55,0,255,1) 100%);
+      background: linear-gradient(135deg, rgba(255,50,50,1) 0%,rgba(55,0,255,1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }

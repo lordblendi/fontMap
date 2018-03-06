@@ -8,6 +8,10 @@
     font-style: normal;
 }
 
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 .fontMap_characters {
   padding: 10%;
   font-family: 'tenforce';
@@ -41,10 +45,6 @@
   &--charCode {
     display: block;
     font-size: 48px;
-    background: -webkit-linear-gradient(135deg, rgba(255,50,50,1) 0%,rgba(55,0,255,1) 100%);
-    background: linear-gradient(135deg, rgba(255,50,50,1) 0%,rgba(55,0,255,1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 
   &--unicode {
