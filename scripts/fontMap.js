@@ -7,7 +7,7 @@ $(document).ready(function() {
       alert('Could not load font: ' + err);
     } else {
       const glyphs = font.glyphs.glyphs;
-      const fontMapCharacters = $('.fontMap_characters')
+      const fontMapCharacters = $('.fonticons')
 
 
       $.each(glyphs,function(index, glyph){
@@ -15,7 +15,7 @@ $(document).ready(function() {
         if ( glyph.unicode >= 1300 && glyph.unicode <= 7000) { // Only show our custom icons
           let glyphData = getGlyphData(index, glyph);
           let element = document.createElement('li');
-          $(element).html(glyphData).addClass('fontMap_character');
+          $(element).html(glyphData).addClass('fonticons__item');
           fontMapCharacters.append(element);
         }
 
@@ -26,10 +26,10 @@ $(document).ready(function() {
 
 function getGlyphData(index, glyph) {
   let unicode = glyph.unicode;
-  let charCode = String.fromCharCode(unicode);
-  let cellHTML = `<div class="fontMap_character--cellBlock">
-  <span class="fontMap_character--charCode">${charCode}</span>
-  <span class="fontMap_character--unicode">${unicode}</span>
-  </div>`;
+  let charcode = String.fromCharCode(unicode);
+  let cellHTML = `
+    <span class="fonticons__item--charcode">${charcode}</span>
+    <span class="fonticons__item--unicode">${unicode}</span>
+  `;
   return cellHTML;
 }

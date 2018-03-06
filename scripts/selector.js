@@ -41,26 +41,26 @@ function handleSelector(selector, selectorValue) {
 
     // TEMPORARY THEME SELECTOR
     // get current css classes and find the one that's starts with theme_
-    var currentClasses = $('.fontMap_characters')[0].className.split(' ');
+    var currentClasses = $('.fonticons')[0].className.split(' ');
     var currentTheme = "";
     $.each(currentClasses, function(index, appliedClass) {
-      if (appliedClass.indexOf('theme_') >= 0) {
+      if (appliedClass.indexOf('fonticons--') >= 0) {
         currentTheme = appliedClass;
         return;
       }
     });
-    var newTheme = "theme_" + selectorValue.attr('data-theme');
+    var newTheme = "fonticons--" + selectorValue.attr('data-theme');
     // remove old theme, add new theme
-    $('.fontMap_characters').removeClass(currentTheme).addClass(newTheme);
+    $('.fonticons').removeClass(currentTheme).addClass(newTheme);
 
     // generate random colors if it has to be Gradient
     // otherwise go back to black
 
     // default color should be black in Positive and Negative
     var newColor = "#000";
-    var colorFul = newTheme.includes('Colorful');
+    var colorFul = newTheme.includes('colourful');
 
-    $('.fontMap_characters .fontMap_character--cellBlock').each(function(index, cellBlock){
+    $('.fonticons__item').each(function(index, cellBlock){
         // if it should be colorful, apply random color
         if (colorFul) {
           newColor = '#'+'0123456789abcdef'.split('').map(function(v,i,a){
