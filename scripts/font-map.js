@@ -12,12 +12,12 @@ $(document).ready(function() {
 
       $.each(glyphs,function(index, glyph){
 
-        //if ( glyph.unicode >= 1300 && glyph.unicode <= 7000) { // Only show our custom icons
+        if ( glyph.unicode >= 1300 && glyph.unicode <= 7000) { // Only show our custom icons
           let glyphData = getGlyphData(index, glyph);
           let element = document.createElement('li');
           $(element).html(glyphData).addClass('fonticons__item');
           fontMapCharacters.append(element);
-        //}
+        }
 
       });
     }
