@@ -8,17 +8,22 @@ $(document).ready(function() {
     } else {
       const glyphs = font.glyphs.glyphs;
       const fontMapCharacters = $('.fonticons')
+      const old_fontMapCharacters = $('.old-fonticons')
 
-
-      $.each(glyphs,function(index, glyph){
-
-        if ( glyph.unicode >= 1300 && glyph.unicode <= 7000) { // Only show our custom icons
+      $.each(glyphs, function(index, glyph){
+        if ( index >= 1435 && index <= 7000) {
           let glyphData = getGlyphData(index, glyph);
           let element = document.createElement('li');
           $(element).html(glyphData).addClass('fonticons__item');
           fontMapCharacters.append(element);
         }
 
+        if ( (index >= 744 && index <= 799) || (index >= 818 && index <= 885) ) {
+          let glyphData = getGlyphData(index, glyph);
+          let element = document.createElement('li');
+          $(element).html(glyphData).addClass('fonticons__item');
+          old_fontMapCharacters.append(element);
+        }
       });
     }
   });

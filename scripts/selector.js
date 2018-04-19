@@ -41,7 +41,7 @@ function handleSelector(selector, selectorValue) {
 
     // TEMPORARY THEME SELECTOR
     // get current css classes and find the one that's starts with theme_
-    var currentClasses = $('.fonticons')[0].className.split(' ');
+    var currentClasses = $('.fonticons, .old-fonticons')[0].className.split(' ');
     var currentTheme = "";
     $.each(currentClasses, function(index, appliedClass) {
       if (appliedClass.indexOf('fonticons--') >= 0) {
@@ -51,7 +51,7 @@ function handleSelector(selector, selectorValue) {
     });
     var newTheme = "fonticons--" + selectorValue.attr('data-theme');
     // remove old theme, add new theme
-    $('.fonticons').removeClass(currentTheme).addClass(newTheme);
+    $('.fonticons, .old-fonticons').removeClass(currentTheme).addClass(newTheme);
 
     // generate random colors if it has to be Gradient
     // otherwise go back to black

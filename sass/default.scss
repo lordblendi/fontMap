@@ -20,10 +20,16 @@ body {
   text-align: center;
 }
 
-.fonticons {
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.fonticons,
+.old-fonticons {
   position: relative;
   margin: 0;
-  padding: 10%;
+  padding: 50px 10%;
   font-family: 'tenforce';
   background: #FFF;
 
@@ -60,7 +66,7 @@ body {
   }
 
   &--negative {
-    filter: invert(100%);
+    filter: invert(1);
 
     .fonticons {
       &__item {
