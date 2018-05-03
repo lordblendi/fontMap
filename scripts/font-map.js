@@ -11,7 +11,7 @@ $(document).ready(function() {
       const old_fontMapCharacters = $('.old-fonticons')
 
       $.each(glyphs, function(index, glyph){
-        if ( index >= 1435 && index <= 7000) {
+        if ( index >= 1300 && index <= 7000) {
           let glyphData = getGlyphData(index, glyph);
           let element = document.createElement('li');
           $(element).html(glyphData).addClass('fonticons__item');
