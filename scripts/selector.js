@@ -21,7 +21,6 @@ function handleSelector(selector, selectorValue) {
   const expanded = selector.hasClass('pmx-selector--expanded');
   const multiSelect = selector.hasClass('pmx-selector--multiselect');
   const toggleSelect = selector.hasClass('pmx-selector--toggleselect');
-
   const selectedValues = selector.find('.pmx-selector__item--selected');
 
   // toggleSelect = singleSelect
@@ -66,8 +65,13 @@ function handleSelector(selector, selectorValue) {
           newColor = '#'+'0123456789abcdef'.split('').map(function(v,i,a){
               return i>5 ? null : a[Math.floor(Math.random()*16)]
             }).join('');
+
+          $(cellBlock).css('color', newColor);
         }
-        $(cellBlock).css('color', newColor);
+        else {
+          $(cellBlock).css('color', 'inherit');
+        }
+        //$(cellBlock).css('color', newColor);
     });
 
   } else if (multiSelect === true) {

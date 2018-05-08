@@ -8,22 +8,27 @@ $(document).ready(function() {
     } else {
       const glyphs = font.glyphs.glyphs;
       const fontMapCharacters = $('.fonticons')
-      const old_fontMapCharacters = $('.old-fonticons')
 
       $.each(glyphs, function(index, glyph){
-        if ( index >= 1300 && index <= 7000) {
+        if ( index >= 1435 && index <= 7000) {
           let glyphData = getGlyphData(index, glyph);
           let element = document.createElement('li');
           $(element).html(glyphData).addClass('fonticons__item');
           fontMapCharacters.append(element);
         }
+      });
 
-        if ( (index >= 744 && index <= 799) || (index >= 818 && index <= 885) ) {
-          let glyphData = getGlyphData(index, glyph);
-          let element = document.createElement('li');
-          $(element).html(glyphData).addClass('fonticons__item');
-          old_fontMapCharacters.append(element);
-        }
+      $('.fonticons__item').click(function() {
+        var theme = $(this).parent()[0].className;
+        var icon = $(this).find('.fonticons__item--charcode').html();
+        var code = $(this).find('.fonticons__item--unicode').html();
+        $('.icon-pop').find('.icon__inner').html(icon);
+        $('.icon-pop').find('.icon__code').html(code);
+        $('.icon-pop').addClass('icon-pop--visible ' + theme);
+      })
+
+      $('.icon-pop').click(function() {
+        $(this).removeClass('icon-pop--visible');
       });
     }
   });
