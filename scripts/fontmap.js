@@ -27,12 +27,23 @@ $(document).ready(function() {
         $('.icon-pop').addClass('icon-pop--visible ' + theme);
       })
 
-      $('.icon-pop').click(function() {
-        $(this).removeClass('icon-pop--visible');
+      $('.icon-pop--visible').click(function(event) {
+        console.log(event.target);
+    /*
+        if (!$(event.target).is('.icon-pop__inner')) {
+          $(this).removeClass('icon-pop--visible');
+        }
+    */
       });
+
     }
   });
+
+
+
 });
+
+
 
 function getGlyphData(index, glyph) {
   let unicode = glyph.unicode;

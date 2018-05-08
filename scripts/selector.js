@@ -1,6 +1,6 @@
 // toggle simple
 $('.JS_selector').on('click', function() {
-  $(this).toggleClass('pmx-selector--clicked');
+  $(this).toggleClass('selector--clicked');
 });
 
 // toggle button actions
@@ -16,25 +16,25 @@ $('.JS_selectorItem').on('click', function() {
 });
 
 function handleSelector(selector, selectorValue) {
-  const isSelected = selectorValue.hasClass('pmx-selector__item--selected');
-  const required = selector.hasClass('pmx-selector--required');
-  const expanded = selector.hasClass('pmx-selector--expanded');
-  const multiSelect = selector.hasClass('pmx-selector--multiselect');
-  const toggleSelect = selector.hasClass('pmx-selector--toggleselect');
-  const selectedValues = selector.find('.pmx-selector__item--selected');
+  const isSelected = selectorValue.hasClass('selector__item--selected');
+  const required = selector.hasClass('selector--required');
+  const expanded = selector.hasClass('selector--expanded');
+  const multiSelect = selector.hasClass('selector--multiselect');
+  const singleselect = selector.hasClass('selector--singleselect');
+  const selectedValues = selector.find('.selector__item--selected');
 
-  // toggleSelect = singleSelect
-  if (toggleSelect === true) {
+  // singleselect = singleSelect
+  if (singleselect === true) {
     // if required, remove all the others from being selected
-    selectedValues.removeClass('pmx-selector__item--selected');
+    selectedValues.removeClass('selector__item--selected');
     // if required, select the one you clicked on
     if (required === true) {
-      selectorValue.addClass('pmx-selector__item--selected');
+      selectorValue.addClass('selector__item--selected');
     }
     // otherwise if it's not selected, toggle it;
     else {
       if (!isSelected) {
-        selectorValue.toggleClass('pmx-selector__item--selected');
+        selectorValue.toggleClass('selector__item--selected');
       }
     }
 
@@ -80,15 +80,15 @@ function handleSelector(selector, selectorValue) {
     if (required === true) {
       if (selectedValues.length === 1) {
         if (isSelected === false) {
-          selectorValue.toggleClass('pmx-selector__item--selected');
+          selectorValue.toggleClass('selector__item--selected');
         }
       } else {
-        selectorValue.toggleClass('pmx-selector__item--selected');
+        selectorValue.toggleClass('selector__item--selected');
       }
     }
     // otherwise just toggle
     else {
-      selectorValue.toggleClass('pmx-selector__item--selected');
+      selectorValue.toggleClass('selector__item--selected');
     }
   }
 }
