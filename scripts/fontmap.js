@@ -1,7 +1,7 @@
 ---
 ---
 
-opentype.load('{{ site.baseurl }}/assets/fonts/tenforce.ttf', function(err, font) {
+opentype.load('https://tenforce.github.io/tracker-mockup/assets/fonts/tenforce.ttf', function(err, font) {
   if (err) {
     alert('Could not load font: ' + err);
   } else {
